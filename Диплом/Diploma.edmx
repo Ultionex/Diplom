@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Alias="Self" Namespace="Хранилище DiplomaModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012">
+        <EntityType Name="Журнал параметров">
+          <Key>
+            <PropertyRef Name="Код_записи" />
+          </Key>
+          <Property Name="Код_записи" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="Длина камеры" Nullable="false" Type="float" />
+          <Property Name="Длина става" Nullable="false" Type="float" />
+          <Property Name="Длина пласта" Nullable="false" Type="float" />
+          <Property Name="Количество угля с одного става" Type="float" />
+          <Property Name="Количество единиц угля с камеры" Type="float" />
+          <Property Name="Количество ставов на камеру" Type="float" />
+          <Property Name="Количество камер в пласте" Type="float" />
+        </EntityType>
+        <EntityContainer Name="Хранилище DiplomaModelContainer">
+          <EntitySet Name="Журнал параметров" EntityType="Self.Журнал параметров" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DiplomaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Журнал_параметров">
+          <Key>
+            <PropertyRef Name="Код_записи" />
+          </Key>
+          <Property Name="Код_записи" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Длина_камеры" Type="Double" Nullable="false" />
+          <Property Name="Длина_става" Type="Double" Nullable="false" />
+          <Property Name="Длина_пласта" Type="Double" Nullable="false" />
+          <Property Name="Количество_угля_с_одного_става" Type="Double" />
+          <Property Name="Количество_единиц_угля_с_камеры" Type="Double" />
+          <Property Name="Количество_ставов_на_камеру" Type="Double" />
+          <Property Name="Количество_камер_в_пласте" Type="Double" />
+        </EntityType>
+        <EntityContainer Name="Диплом_МищенкоEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Журнал_параметров" EntityType="Self.Журнал_параметров" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище DiplomaModelContainer" CdmEntityContainer="Диплом_МищенкоEntities">
+          <EntitySetMapping Name="Журнал_параметров">
+            <EntityTypeMapping TypeName="DiplomaModel.Журнал_параметров">
+              <MappingFragment StoreEntitySet="Журнал параметров">
+                <ScalarProperty Name="Код_записи" ColumnName="Код_записи" />
+                <ScalarProperty Name="Длина_камеры" ColumnName="Длина камеры" />
+                <ScalarProperty Name="Длина_става" ColumnName="Длина става" />
+                <ScalarProperty Name="Длина_пласта" ColumnName="Длина пласта" />
+                <ScalarProperty Name="Количество_угля_с_одного_става" ColumnName="Количество угля с одного става" />
+                <ScalarProperty Name="Количество_единиц_угля_с_камеры" ColumnName="Количество единиц угля с камеры" />
+                <ScalarProperty Name="Количество_ставов_на_камеру" ColumnName="Количество ставов на камеру" />
+                <ScalarProperty Name="Количество_камер_в_пласте" ColumnName="Количество камер в пласте" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

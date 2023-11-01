@@ -1,0 +1,44 @@
+﻿<Page x:Class="Диплом.Zayavki"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Диплом"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Zayavki">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.ColumnSpan="2" Grid.Row="0" FontSize="20" HorizontalAlignment="Center">Расчёт параметров отработки пласта</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="1" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center">Введите длину камеры(м.)</TextBlock>
+        <TextBox Grid.Column="0" Grid.Row="1" Name="tbxLKam" Width="80" Height="32" HorizontalAlignment="Right"></TextBox>
+        <TextBlock Grid.Column="0" Grid.Row="2" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center">Введите длину става(м.)</TextBlock>
+        <TextBox Grid.Column="0" Grid.Row="2" Name="tbxLStav" Width="80" Height="32" HorizontalAlignment="Right"></TextBox>
+        <TextBlock Grid.Column="0" Grid.Row="3" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"><Run Text="Введите длину "/><Run Language="ru-ru" Text="пласта"/><Run Text="(м.)"/></TextBlock>
+        <TextBox Grid.Column="0" Grid.Row="3" Name="tbxLPlast" Width="80" Height="32" HorizontalAlignment="Right" Cursor="IBeam"></TextBox>
+        <Button VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="4" Name="BtnOk" Click="btnCalc_Click" Width="150" Content="Рассчитать" Height="25" />
+        <TextBlock Grid.Column="1" Grid.Row="0" FontSize="20" VerticalAlignment="Bottom" HorizontalAlignment="Center">Результаты расчётов:</TextBlock>
+        <ListBox Grid.Column="1" Grid.Row="1" Grid.RowSpan="3"
+                                     Background="White"  
+                                     Width="280" Height="262" HorizontalAlignment="Center">
+            <TextBlock Text="Количество угля с одного става:" FontSize="16"/>
+            <ListBoxItem Name="KolUglyaStav"  Width="100" Height="25" HorizontalAlignment="Left"/>
+            <TextBlock Text="Количество единиц угля с камеры:" FontSize="16"/>
+            <ListBoxItem Name="KolUglyaKam" Width="100" Height="25" HorizontalAlignment="Left"/>
+            <TextBlock Text="Количество ставов на камеру:" FontSize="16"/>
+            <ListBoxItem Name="KolStav" Width="100" Height="25" HorizontalAlignment="Left"/>
+            <TextBlock Text="Количество камер в пласте:" FontSize="16"/>
+            <ListBoxItem Name="KolKamPlast" Width="100" Height="25" HorizontalAlignment="Left"/>
+        </ListBox>
+    </Grid>
+</Page>

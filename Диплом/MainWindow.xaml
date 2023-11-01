@@ -1,0 +1,39 @@
+﻿<Window x:Class="Диплом.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Диплом"
+        mc:Ignorable="d"
+        Title="Система расчёта параметров" Height="500" Width="1200" ResizeMode="CanMinimize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="190"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Background="#FFE6E6E6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+            <RadioButton Grid.Row="0" Name="Btn_Zayavki" Click="btn_Zayavki_CLick" Content="Расчёт параметров" Height="35" Width="160" Style="{StaticResource ThemeButtonMenu}"></RadioButton>
+            <RadioButton Grid.Row="1" Name="Btn_Data" Click="btn_Data_CLick" Content="Журнал параметров" Height="35" Width="160" Style="{StaticResource ThemeButtonMenu}"></RadioButton>
+            <RadioButton Grid.Row="2" Name="Btn_Otchet" Click="btn_Otchet_CLick" Content="Архив отчётов" Height="35" Width="160" Style="{StaticResource ThemeButtonMenu}"></RadioButton>
+                <Button Grid.Row="3" Name="btn_Back" Click="btn_Back_CLick" Content="На главную" Height="35" Width="160"></Button>
+            </Grid>
+            <Grid Column="1">
+                <Frame ContentRendered="MainFrame_ContentRendered"
+                   NavigationUIVisibility="Hidden" Name="MainFrame"></Frame>
+            </Grid>
+    </Grid>
+</Window>
